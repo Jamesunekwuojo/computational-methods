@@ -1,6 +1,6 @@
 # Define the recurrence relation
 def calculate_y(n, y_values):
-    return 0.8 * y_values[n-2] + 1.19 * y_values[n-1] - 0.99 * y_values[n-3]
+    return                                                              
 
 # Initial conditions
 y_values = [1, 0.95, 0.905]  # Example initial conditions for y0, y1, y2. You can modify these
