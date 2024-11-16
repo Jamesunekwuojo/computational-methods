@@ -13,3 +13,17 @@ for n in range(3, 1001):
 # Output the results
 for i in range(len(y_values)):
     print(f'y{i} = {y_values[i]}')
+
+
+
+# Useful commands: 
+# To install, create a virtual environment. python3 -m  venv myenv
+
+# Activate virtual environment - source/bin/activate (for ubuntu, linus OS), deactivate - to deactivate virtual env
+
+# for windows cmd , use -  myenv\Scripts\activate
+
+
+# Install desired package - pip install requirement.txt
+
+# Ensure you are in the root directory before installation.
