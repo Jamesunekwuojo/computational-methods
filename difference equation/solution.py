@@ -1,9 +1,12 @@
 import numpy as np
 import sympy as sp
 
+
+
 # Define the recurrence relation
 def solve_difference_equation(n_terms=10):
     # Coefficients of the homogeneous equation
+    
     a2, a1, a0 = 1, -1, 5/2
 
     # Solve the characteristic equation: r^2 - r + 5/2 = 0
