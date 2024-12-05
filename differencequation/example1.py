@@ -1,6 +1,6 @@
 # Define the recurrence relation
 def calculate_y(n, y_values):
-    return                                                              
+    return 0.8 * y_values[n-1]  +  1.19 * y_values[n-2]  - 0.99 * y_values[n-3]                                                           
 
 # Initial conditions
 y_values = [1, 0.95, 0.905]  # Example initial conditions for y0, y1, y2. You can modify these
@@ -20,6 +20,8 @@ for i in range(len(y_values)):
 # To install, create a virtual environment. python3 -m  venv myenv
 
 # Activate virtual environment - source/bin/activate (for ubuntu, linus OS), deactivate - to deactivate virtual env
+
+# source venv_name/bin/activate - for nobara  or fedora based linux os
 
 # for windows cmd , use -  myenv\Scripts\activate
 
