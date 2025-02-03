@@ -1,3 +1,6 @@
+
+# Eulers method
+
 from math import exp
 
 def main():
