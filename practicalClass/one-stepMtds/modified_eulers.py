@@ -1,27 +1,31 @@
-def function(x, y):
-    return 3 * x * x * y
+import numpy as np
 
-def modified_euler(x0, y, h, x):
-    while x0 < x:
-        
-        k1 = function(x0, y)
-        
-        xk2 = x0 + h / 2 
-        yk2 = y + (h / 2) * k1  
-        
-        k2 = function(xk2, yk2)
-        
-        y = y + h * k2  
-        
-        print(f"The value of y at x = {x0:.1f} ---> {y:.8f}")  
-        print("")
-        
-        x0 = x0 + h  
-
-# Initial conditions
-x0 = 0
-y = 1
-x = 1
+# Given parameters
 h = 0.1
+x0, y0 = 0, 1  # Initial condition
+x_values = np.arange(x0, 1 + h, h)  # Generate x values from 0 to 1 with step size h
+y_values = [y0]  # List to store y values
 
-modified_euler(x0, y, h, x)
+# Function f(x, y) = 3x^2y
+def f(x, y):
+    return 3 * x**2 * y
+
+def exact_solution(x):
+    return np.exp(x**3)  # Exact solution for comparison
+
+# Implement Euler's Modified Method
+for xk in x_values[:-1]:  # Iterate over all x values except the last
+    yk = y_values[-1]
+    k1 = f(xk, yk)
+    yk_half_step = yk + 0.5 * h * k1  # Intermediate y value
+    xk_half_step = xk + 0.5 * h  # Intermediate x value
+    k2 = f(xk_half_step, yk_half_step)  # Compute f at the intermediate step
+    yk1 = yk + h * k2  # Compute next y value
+    y_values.append(yk1)
+
+# Print formatted table
+print(f"{'x':<10}{'y_approx':<15}{'y_exact'}")
+print("-" * 35)
+
+for x, y_approx in zip(x_values, y_values):
+    print(f"{x:<10.4f}{y_approx:<15.6f}{exact_solution(x):.6f}")
