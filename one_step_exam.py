@@ -3,6 +3,8 @@ import numpy as np
 # Function defining the given differential equation y' = 3x^2y
 def f(x, y):
     return 3 * x**2 * y
+def exact_solution(x):
+    return np.exp(x**3)
 
 # Euler's Method Implementation
 def euler_method(x0, y0, h, x_end):
